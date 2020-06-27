@@ -17,4 +17,8 @@ public interface AddressSqlRepository  extends PagingAndSortingRepository<Addres
     @Query(value = "SELECT * FROM ADDRESS a WHERE a.parent = :parent ", nativeQuery = true)
     Page<Address> findByParentNative(@Param("parent") Integer parent, Pageable pageable);
 
+    //@Query(value = "SELECT * FROM ADDRESS a WHERE a.parent = :parent ", nativeQuery = true)
+    Page<Address> findByParentAndLevel(@Param("parent") Integer parent, @Param("level") VkurTips.TipsEnum level, Pageable pageable);
+
+
 }

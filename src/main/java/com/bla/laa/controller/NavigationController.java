@@ -2,6 +2,7 @@ package com.bla.laa.controller;
 
 import com.bla.laa.model.Address;
 import com.bla.laa.model.AddressSqlRepository;
+import com.bla.laa.model.VkurTips;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,23 +30,41 @@ public class NavigationController {
     @GetMapping("/id-{id}")
     public ModelAndView printNAv(@PathVariable Integer id) {
 
-        List<Address> addressList = getParentAddress(id);
-
         ModelAndView modelAndView = new ModelAndView("nav");
-        modelAndView.addObject("addressList", addressList);
-        return  modelAndView;
 
+        List<Address> addressCountyList = getParentAddress(id,VkurTips.TipsEnum.COUNTY);
+        modelAndView.addObject("addressCountyList", addressCountyList);
+
+        List<Address> addressParishList = getParentAddress(id,VkurTips.TipsEnum.PARISH);
+        modelAndView.addObject("addressParishList", addressParishList);
+
+        List<Address> addressCityList = getParentAddress(id,VkurTips.TipsEnum.CITY);
+        modelAndView.addObject("addressCityList", addressCityList);
+
+        List<Address> addressVillageList = getParentAddress(id,VkurTips.TipsEnum.VILLAGE);
+        modelAndView.addObject("addressVillageList", addressVillageList);
+
+        List<Address> addressStreetList = getParentAddress(id,VkurTips.TipsEnum.STREET);
+        modelAndView.addObject("addressStreetList", addressStreetList);
+
+        List<Address> addressBuildingList = getParentAddress(id,VkurTips.TipsEnum.BUILDING);
+        modelAndView.addObject("addressBuildingList", addressBuildingList);
+
+        List<Address> addressFlatList = getParentAddress(id,VkurTips.TipsEnum.FLAT);
+        modelAndView.addObject("addressFlatList", addressFlatList);
+
+
+        return  modelAndView;
     }
 
-
-    private List<Address> getParentAddress(Integer parrent){
+    private List<Address> getParentAddress(Integer parrent, VkurTips.TipsEnum level){
 
         List<Address> addresses = new ArrayList<>();
         Page<Address> page = null;
         Pageable pageable = PageRequest.of(0, 100);
 
         while (true) {
-            page = addressSqlRepository.findByParentNative(parrent, pageable);
+            page = addressSqlRepository.findByParentAndLevel(parrent, level, pageable);
             List<Address> addressList = page.getContent();
             addresses.addAll(addressList);
             if (!page.hasNext()) {
