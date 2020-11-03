@@ -1,6 +1,6 @@
 
 plugins {
-    id 'org.springframework.boot' version '2.2.4.RELEASE'
+    id 'org.springframework.boot' version '2.2.6.RELEASE'
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id 'java'
 }
@@ -28,20 +28,20 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
     implementation 'org.springframework:spring-context'
     implementation 'org.springframework:spring-webmvc'
-    //implementation 'org.springframework:spring-web'
-
-    //compile 'org.springframework:spring-core'
 
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
-
     //implementation 'org.springframework.boot:spring-boot-starter-tomcat'
-
     compile 'javax.servlet:jstl:1.2'
+
     runtimeOnly 'mysql:mysql-connector-java'
-    // compile 'javax:javaee-api:8.0'
     compile 'org.hibernate:hibernate-spatial:5.4.13.Final'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-neo4j'
+    implementation 'org.neo4j:neo4j-ogm-bolt-native-types:3.2.17'
+
 
     compile 'javax.servlet:javax.servlet-api:4.0.1'
 
