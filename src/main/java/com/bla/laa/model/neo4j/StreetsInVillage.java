@@ -62,7 +62,7 @@ public class StreetsInVillage {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("BuildingsOnStreet{");
+        sb.append("StreetsInVillage{");
         sb.append("id=" + id  );
         sb.append(", name='" + name + '\'' );
         sb.append(", street=" + street.getName() );

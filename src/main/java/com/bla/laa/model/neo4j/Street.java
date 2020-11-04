@@ -106,10 +106,10 @@ public class Street {
             sb.append(" = '" + city.getStreet().getName() + "'");
         }
         if (buildings != null){
-            sb.append(", buildings= [ ");
+            sb.append(", buildings=[");
             for (BuildingsOnStreet b : buildings){
-                sb.append(", (" + b.getBuilding().getVzdId() + ")");
-                sb.append(" = '" + b.getBuilding().getName() + "'");
+                sb.append("'" + b.getBuilding().getName() + "'");
+                sb.append("(" + b.getBuilding().getVzdId() + "),");
             }
             sb.append("]");
         }

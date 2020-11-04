@@ -119,14 +119,18 @@ public class City {
         sb.append(", formattedAdr='" + formattedAdr  + "'" );
         sb.append(", country='" + country.getName()  + "'" );
         if (buildings != null){
+            sb.append(", buildings=[");
             for (BuildingsInCity b : buildings){
-                sb.append(b.getBuilding().getName() + " , ");
+                sb.append("'" + b.getBuilding().getName() + "'");
+                sb.append("(" + b.getBuilding().getVzdId() + "),");
             }
             sb.append("]");
         }
         if (streets != null){
+            sb.append(", streets=[");
             for (StreetsInCity b : streets){
-                sb.append(b.getStreet().getName() + " , ");
+                sb.append("'" + b.getStreet().getName() + "'");
+                sb.append("(" + b.getStreet().getVzdId() + "),");
             }
             sb.append("]");
         }

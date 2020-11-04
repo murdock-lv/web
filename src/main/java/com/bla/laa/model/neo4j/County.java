@@ -118,14 +118,16 @@ public class County {
         if (villages != null){
             sb.append(", villages=[" );
             for (VillagesInCounty b : villages){
-                sb.append(b.getVillage().getName() + " , ");
+                sb.append("'" + b.getVillage().getName() + "'");
+                sb.append("(" + b.getVillage().getVzdId() + "), ");
             }
             sb.append("]");
         }
         if (citys != null){
-            sb.append(", villages=[" );
+            sb.append(", citys=[" );
             for (CitysInCounty b : citys){
-                sb.append(b.getCity().getName() + " , ");
+                sb.append("'" + b.getCity().getName() + "'");
+                sb.append("(" + b.getCity().getVzdId() + "), ");
             }
             sb.append("]");
         }

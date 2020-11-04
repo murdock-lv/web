@@ -57,91 +57,116 @@
 
             <c:if test="${not empty found_building}">
                 Found flats :
-
                 <c:forEach items="${building.flats}" var="flat">
-                    <li><a href="/adr/${flat.flat.formattedAdr}/">${flat.flat.name}</a></li>
+                    <a href="/adr/${flat.flat.formattedAdr}/">${flat.flat.name}</a>
+                    <b>/</b>
                 </c:forEach>
+                <br>
             </c:if>
 
             <c:if test="${not empty found_street}">
                 Found buildings :
                 <c:forEach items="${street.buildings}" var="building">
-                    <li><a href="/adr/${building.building.formattedAdr}/">${building.building.name}</a></li>
+                    <a href="/adr/${building.building.formattedAdr}/">${building.building.name}</a>
+                    <b>/</b>
                 </c:forEach>
+                <br>
             </c:if>
 
             <c:if test="${not empty found_city}">
                 Found buildings :
                 <c:forEach items="${city.buildings}" var="building">
-                    <li><a href="/adr/${building.building.formattedAdr}/">${building.building.name}</a></li>
+                    <a href="/adr/${building.building.formattedAdr}/">${building.building.name}</a>
+                    <b>/</b>
                 </c:forEach>
+                <br>
 
                 Found streets :
                 <c:forEach items="${city.streets}" var="street">
-                    <li><a href="/adr/${street.street.formattedAdr}/">${street.street.name}</a></li>
+                    <a href="/adr/${street.street.formattedAdr}/">${street.street.name}</a>
+                    <b>/</b>
                 </c:forEach>
-
+                <br>
             </c:if>
 
             <c:if test="${not empty found_village}">
                 Found buildings :
                 <c:forEach items="${village.buildings}" var="building">
-                    <li><a href="/adr/${building.building.formattedAdr}/">${building.building.name}</a></li>
+                    <a href="/adr/${building.building.formattedAdr}/">${building.building.name}</a>
+                    <b>/</b>
                 </c:forEach>
+                <br>
 
                 Found streets :
                 <c:forEach items="${village.streets}" var="street">
-                    <li><a href="/adr/${street.street.formattedAdr}/">${street.street.name}</a></li>
+                    <a href="/adr/${street.street.formattedAdr}/">${street.street.name}</a>
+                    <b>/</b>
                 </c:forEach>
-
+                <br>
             </c:if>
 
             <c:if test="${not empty found_parish}">
                 Found buildings :
                 <c:forEach items="${parish.buildings}" var="building">
-                    <li><a href="/adr/${building.building.formattedAdr}/">${building.building.name}</a></li>
+                    <a href="/adr/${building.building.formattedAdr}/">${building.building.name}</a>
+                    <b>/</b>
                 </c:forEach>
+                <br>
 
                 Found villages :
                 <c:forEach items="${parish.villages}" var="village">
-                    <li><a href="/adr/${village.village.formattedAdr}/">${village.village.name}</a></li>
+                    <a href="/adr/${village.village.formattedAdr}/">${village.village.name}</a>
+                    <b>/</b>
                 </c:forEach>
+                <br>
             </c:if>
 
 
             <c:if test="${not empty found_county}">
                 Found buildings :
                 <c:forEach items="${county.buildings}" var="building">
-                    <li><a href="/adr/${building.building.formattedAdr}/">${building.building.name}</a></li>
+                    <a href="/adr/${building.building.formattedAdr}/">${building.building.name}</a>
+                    <b>/</b>
                 </c:forEach>
+                <br>
 
                 Found villages :
                 <c:forEach items="${county.villages}" var="village">
-                    <li><a href="/adr/${village.village.formattedAdr}/">${village.village.name}</a></li>
+                    <a href="/adr/${village.village.formattedAdr}/">${village.village.name}</a>
+                    <b>/</b>
                 </c:forEach>
+                <br>
 
                 Found citys :
                 <c:forEach items="${county.citys}" var="city">
-                    <li><a href="/adr/${city.city.formattedAdr}/">${city.city.name}</a></li>
+                    <a href="/adr/${city.city.formattedAdr}/">${city.city.name}</a>
+                    <b>/</b>
                 </c:forEach>
+                <br>
 
                 Found parishs :
                 <c:forEach items="${county.parishs}" var="parish">
-                    <li><a href="/adr/${parish.parish.formattedAdr}/">${parish.parish.name}</a></li>
+                    <a href="/adr/${parish.parish.formattedAdr}/">${parish.parish.name}</a>
+                    <b>/</b>
                 </c:forEach>
+                <br>
             </c:if>
 
 
             <c:if test="${not empty found_country}">
                 Found countys :
                 <c:forEach items="${country.countys}" var="county">
-                    <li><a href="/adr/${county.name}/">${county.name}</a></li>
+                    <a href="/adr/${county.name}/">${county.name}</a>
+                    <b>/</b>
                 </c:forEach>
+                <br>
 
                 Found citys :
                 <c:forEach items="${country.citys}" var="city">
-                    <li><a href="/adr/${city.name}/">${city.name}</a></li>
+                    <a href="/adr/${city.name}/">${city.name}</a>
+                    <b>/</b>
                 </c:forEach>
+                <br>
             </c:if>
 
         </div>

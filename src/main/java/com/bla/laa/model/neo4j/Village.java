@@ -114,16 +114,18 @@ public class Village {
         sb.append(", name='" + name + "'" );
         sb.append(", formattedAdr='" + formattedAdr + "'" );
         if (buildings != null){
-            sb.append(", Streets=[");
+            sb.append(", building=[");
             for (BuildingsInVillage s : this.buildings){
-                sb.append(s.getBuilding().getName() + " , ");
+                sb.append("'"+ s.getBuilding().getName() +"'");
+                sb.append(" (" + s.getBuilding().getVzdId() + "), ");
             }
             sb.append("]");
         }
         if (streets != null){
-            sb.append(", Streets=[");
+            sb.append(", streets=[");
             for (StreetsInVillage s : this.streets){
-                sb.append(s.getStreet().getName() + " , ");
+                sb.append("'"+ s.getStreet().getName() +"'");
+                sb.append("(" + s.getStreet().getVzdId() + "), ");
             }
             sb.append("]");
         }

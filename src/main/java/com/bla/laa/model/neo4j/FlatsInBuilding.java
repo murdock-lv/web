@@ -62,7 +62,7 @@ public class FlatsInBuilding {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("BuildingsOnStreet{");
+        sb.append("FlatsInBuilding{");
         sb.append("id=" + id  );
         sb.append(", name='" + name + '\'' );
         sb.append(", flat=" + flat.getName() );

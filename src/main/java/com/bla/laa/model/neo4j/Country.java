@@ -80,8 +80,9 @@ public class Country {
         sb.append(", name='" + name + "'" );
         if (countys != null){
             sb.append(", countys=[" );
-            for (County c : countys){
-                sb.append(c.getName() + " , ");
+            for (County c : countys) {
+                sb.append("'"+ c.getName() +"'");
+                sb.append("(" + c.getVzdId() + "), ");
             }
             sb.append("]");
         }

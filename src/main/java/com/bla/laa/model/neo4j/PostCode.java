@@ -70,18 +70,22 @@ public class PostCode {
     @Override
     public String toString() {
         StringBuffer sb = new StringBuffer();
-        sb.append("Building{");
+        sb.append("PostCode{");
         sb.append("id=" + id );
         sb.append(", postCode='" + postCode + "'" );
-        if (buildings != null){
-            for (BuildingsInPostCode b : buildings){
-                sb.append(b.getBuilding().getName() + " , ");
+        if (buildings != null) {
+            sb.append(", Buildings=[");
+            for (BuildingsInPostCode b : buildings) {
+                sb.append("'" + b.getBuilding().getName() + "'");
+                sb.append("(" + b.getBuilding().getVzdId() + "),");
             }
             sb.append("]");
         }
+        if (country != null) {
+            sb.append(", country(" + country.getVzdId() + ")");
+            sb.append(" = '" + country.getName() + "'");
+        }
         sb.append("}");
-
-
         return sb.toString();
     }
 }

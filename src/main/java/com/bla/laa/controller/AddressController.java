@@ -1,22 +1,17 @@
 package com.bla.laa.controller;
 
 import com.bla.laa.model.neo4j.*;
-import org.neo4j.ogm.annotation.Relationship;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.util.UriUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static com.bla.laa.model.neo4j.Building.BUILDING;
@@ -27,7 +22,6 @@ import static com.bla.laa.model.neo4j.Flat.FLAT;
 import static com.bla.laa.model.neo4j.Parish.PARISH;
 import static com.bla.laa.model.neo4j.Street.STREET;
 import static com.bla.laa.model.neo4j.Village.VILLAGE;
-import static org.neo4j.ogm.annotation.Relationship.OUTGOING;
 
 @Controller
 @RequestMapping(path = "/adr")
@@ -147,7 +141,6 @@ public class AddressController {
         logger.info("Found {} : {}", FLAT , flat);
 
         attributes.put(FLAT, flat);
-
         if (flat.getBuilding() != null)
             attributes = getBuilding(attributes, flat.getBuilding().getBuilding().getVzdId());
 

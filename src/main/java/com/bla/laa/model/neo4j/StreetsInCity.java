@@ -25,7 +25,6 @@ public class StreetsInCity {
         this.city= c;
     }
 
-
     public Long getId() {
         return id;
     }
@@ -62,7 +61,7 @@ public class StreetsInCity {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("BuildingsOnStreet{");
+        sb.append("StreetsInCity{");
         sb.append("id=" + id  );
         sb.append(", name='" + name + '\'' );
         sb.append(", street=" + street.getName() );

@@ -64,7 +64,7 @@ public class BuildingsInParish {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("BuildingsOnStreet{");
+        sb.append("BuildingsInParish{");
         sb.append("id=" + id  );
         sb.append(", name='" + name + '\'' );
         sb.append(", parish=" + parish.getName() );

@@ -157,20 +157,19 @@ public class Building {
             sb.append(", parish(" + parish.getParish().getVzdId() + ")");
             sb.append(" = '" + parish.getParish().getName() + "'");
         } if (village != null){
-            sb.append(", parish(" + village.getVillage().getVzdId() + ")");
+            sb.append(", village(" + village.getVillage().getVzdId() + ")");
             sb.append(" = '" + village.getVillage().getName() + "'");
-        }if (city != null){
+        } if (city != null){
             sb.append(", city(" + city.getCity().getVzdId() + ")");
             sb.append(" = '" + city.getCity().getName() + "'");
-        }
-        if (street != null) {
+        } if (street != null) {
             sb.append(", street(" + street.getStreet().getVzdId() + ")");
             sb.append(" = '" + street.getStreet().getName() + "'");
-        }if (flats != null){
+        } if (flats != null){
             sb.append(", Flats=[");
             for (FlatsInBuilding f : flats){
+                sb.append("'" + f.getFlat().getName() + "'");
                 sb.append("(" + f.getFlat().getVzdId() + ")");
-                sb.append(" = '" + f.getFlat().getName() + "'");
                 sb.append(",");
             }
             sb.append("]");
